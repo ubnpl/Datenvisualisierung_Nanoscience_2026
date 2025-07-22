@@ -1,4 +1,4 @@
-# Datenkompetenz_NanoScience_2024
+# Beispiele Datenvisualisierung NanoScience 2025
 Jupyter Notebooks zur Vorlesung Datenkompetenz. Beispiele für die Visualisierung öffentlich zugänglicher Datensätze mit Python/Jupyter Notebooks.
 
 Verwendete Python Version: 3.9 oder höher
