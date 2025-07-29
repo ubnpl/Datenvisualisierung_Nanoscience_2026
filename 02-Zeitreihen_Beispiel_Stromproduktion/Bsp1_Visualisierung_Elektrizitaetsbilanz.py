@@ -10,7 +10,7 @@
 # Datenquelle: Bundesamt für Energie
 # Webseite: https://opendata.swiss/de/dataset/schweizerische-elektrizitatsstatistik-schweizerische-elektrizitatsbilanz-monatswerte
 # 
-# Zeitpunkt der Abfrage: 03.10.2024
+# Zeitpunkt der Abfrage: 28.07.2025
 # 
 # Format: CSV (.csv)
 

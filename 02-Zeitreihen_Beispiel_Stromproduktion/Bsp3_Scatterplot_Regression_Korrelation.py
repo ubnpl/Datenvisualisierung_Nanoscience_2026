@@ -10,7 +10,7 @@
 # Datenquelle: Bundesamt für Energie
 # Webseite: https://opendata.swiss/dataset/energiedashboard-ch-stromproduktion-swissgrid
 # 
-# Zeitpunkt der Abrfrage: 03.10.2024
+# Zeitpunkt der Abrfrage: 28.07.2025
 # 
 # Format: CSV (.csv)
 
@@ -178,14 +178,14 @@ plt.show()
 f, axs = plt.subplots(1,1, figsize=(12, 8))
 
 lx1 = '2015-01-01' # unteres Limit x-Achse
-lx2 = '2024-08-01' # oberes Limit y-Achse
+lx2 = '2025-06-01' # oberes Limit y-Achse
 ly1 = -2.0   # unteres Limit y-Achse
 ly2 = 110.0 # oberes Limit y-Achse
 
 plt.subplot(1, 1, 1)
 plt.plot(df_fluss['Datum'],df_fluss['Produktion_GWh'])
 plt.plot(df_photo['Datum'],df_photo['Produktion_GWh'])
-plt.xticks(df_fluss['Datum'][0::450])
+plt.xticks(df_fluss['Datum'][0::500])
 plt.xlim(lx1,lx2)
 plt.ylim(ly1,ly2)
 plt.legend(['Flusskraft','Photovoltaik']) # Beschriftung der Datensätze
@@ -195,28 +195,16 @@ plt.xlabel('Datum')
 plt.show()
 
 
-# #### Listen gleicher Länge erzeugen
+# ### Scatterplot zur Datenvisualisierung
 # 
-# Für den Scatterplot werden Listen gleicher länge gebraucht. Dazu werden die in beiden Arrays nur die letzten 3000 Datenpunkte ausgewählt und als neues Array gespeichert.
+# Die Stromproduktion aus beiden Quellen wird gegeneinander aufgetragen. Dazu werden Zeitreihen gleicher Länge benötigt, wie sie in diesem Datensatz vorliegen. Bei Zeitreihen ungleicher Länge muss zuerst ein Ausschnitt gleicher Länge gewählt und als neue Zeitreihe gespeichert werden.
 
 # In[11]:
 
 
-# Neue Arrays erzeugen
-df_photo_red = df_photo['Produktion_GWh'][-(3500-len(df_photo)):]
-df_fluss_red = df_fluss['Produktion_GWh'][-(3500-len(df_fluss)):]
-
-
-# ### Scatterplot zur Datenvisualisierung
-# 
-# Die Stromproduktion aus beiden Quellen wird gegeneinander aufgetragen.
-
-# In[12]:
-
-
 plt.figure().set_figheight(5)
 plt.figure().set_figwidth(10)
-plt.scatter(df_fluss_red, df_photo_red, s=10, alpha=0.6, edgecolors="k") # Scatterplot Flusskrft gegen Photovoltaik
+plt.scatter(df_fluss['Produktion_GWh'], df_photo['Produktion_GWh'], s=10, alpha=0.6, edgecolors="k") # Scatterplot Flusskrft gegen Photovoltaik
 plt.xlabel('Flusskraft Stromproduktion [GWh]') # Beschriftung x-Achse
 plt.ylabel('Photovoltaik Stromproduktion [GWh]') # Beschriftung y-Achse
 plt.show()
@@ -228,7 +216,7 @@ plt.show()
 # 
 # https://numpy.org/doc/stable/reference/generated/numpy.polyfit.html
 
-# In[13]:
+# In[12]:
 
 
 # Numpy importieren
@@ -237,20 +225,20 @@ import numpy as np
 
 # Linearen Regression mit least squares mit np.polyfit() Das Resultat ist die Steigung (b) und Achsenabschitt (a) der Regressionslinie. Der Grad des Polynoms wird über deg=1 (linear) festgelegt.
 
-# In[14]:
+# In[13]:
 
 
 # Fitten der linearen Regression mit least squares with np.polyfit
-b, a = np.polyfit(df_fluss_red, df_photo_red, deg=1)
+b, a = np.polyfit(df_fluss['Produktion_GWh'], df_photo['Produktion_GWh'], deg=1)
 print('b = ', b, '\ta =', a)
 
 
-# In[15]:
+# In[14]:
 
 
 plt.figure().set_figheight(5) # Breite
 plt.figure().set_figwidth(10) # Höhe
-plt.scatter(df_fluss_red, df_photo_red, s=10, alpha=0.6, edgecolors="k") # Scatterplot Flusskrft gegen Photovoltaik
+plt.scatter(df_fluss['Produktion_GWh'], df_photo['Produktion_GWh'], s=10, alpha=0.6, edgecolors="k") # Scatterplot Flusskrft gegen Photovoltaik
 
 # Sequenz der Zahlen von 10 bis 105 generieren (für Darstellung)
 xseq = np.linspace(10, 105, num=100)
@@ -277,12 +265,18 @@ plt.show()
 # 
 # https://numpy.org/doc/stable/reference/generated/numpy.corrcoef.html
 
-# In[16]:
+# In[15]:
 
 
 # Korrelationsmatrix berechnen
-r = np.corrcoef(df_fluss_red, df_photo_red)
+r = np.corrcoef(df_fluss['Produktion_GWh'], df_photo['Produktion_GWh'])
 
 # Nicht-diagonale Elemente der Korrelationsmatrix ausgeben
 print("Korrelationskoeffizient = ", r[0,1]) 
+
+
+# In[ ]:
+
+
+
 

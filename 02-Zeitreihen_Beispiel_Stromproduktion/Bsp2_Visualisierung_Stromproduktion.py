@@ -12,7 +12,7 @@
 # Datenquelle: Bundesamt für Energie
 # Webseite: https://opendata.swiss/dataset/energiedashboard-ch-stromproduktion-swissgrid
 # 
-# Zeitpunkt der Abfrage: 03.10.2024
+# Zeitpunkt der Abfrage: 28.07.2025
 # 
 # Format: CSV (.csv)
 
@@ -236,14 +236,14 @@ plt.show()
 
 # Um die Zeitreihen besser vergleichen zu können werden die x- und y- Achsen zur Visualisierung angeglichen.
 
-# In[13]:
+# In[14]:
 
 
 # Matplotlib subplots
 f, axs = plt.subplots(6,1, figsize=(15, 20)) # Definieren der Subplots
 
 lx1 = '2016-01-01' # unteres Limit x-Achse
-lx2 = '2024-08-01' # oberes Limit x-Achse
+lx2 = '2025-06-01' # oberes Limit x-Achse
 ly1 = -10.0   # unteres Limit y-Achse
 ly2 = 160.0 # oberes Limit y-Achse
 
@@ -295,6 +295,12 @@ plt.show()
 
 
 # Diese Visualisierung verdeutlicht die Unterschiedlichen Strommengen, die durch die verschiedenen Energieträger erzeugt werden.
+
+# In[ ]:
+
+
+
+
 
 # In[ ]:
 
