@@ -5,7 +5,7 @@
 # 
 # Grundlagen der Datenvisualisierung mit Matplotlib: Einfache Visualisierung von Funktionen und Daten.
 # 
-# Die benötigten Pythonmodule sind in den meisten installation schon mit dabei; evtl. muss für Teil 2 Scipy dazu installiert werden. Installieren von Scipy mit Anaconda (im Anaconda Prompt (Windows) oder Terminal (Linux oder MacOS):
+# Die benötigten Pythonmodule numpy und matplotlib sind in den meisten Installation schon mit dabei; für Teil 2 muss Scipy dazu installiert werden. Installieren von Scipy mit Anaconda (im Anaconda Prompt (Windows) oder Terminal (Linux oder MacOS):
 # 
 #     conda install scipy
 # 
@@ -15,11 +15,6 @@
 # #### Module für Teil 1 importieren
 # 
 # Für Teil 1 werden NumPy und MatPlotLib benötigt.
-# 
-# NumPy: https://numpy.org/
-# 
-# MatPlotLib: https://matplotlib.org/
-# 
 
 # In[1]:
 
@@ -159,12 +154,6 @@ plt.ylabel('Position [arbitrary units]') # Beschriftung der y-Achse
 plt.plot(traj, 'o:b') # Funktion plotten: Trajektoriendaten gegen Zeit
 plt.savefig('Brownsche_Bewegung_1D.png')
 plt.show
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:
