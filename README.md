@@ -1,9 +1,9 @@
-# Beispiele Datenvisualisierung NanoScience 2025
+# Beispiele Datenvisualisierung NanoScience 2026
 Jupyter Notebooks zur Vorlesung Datenkompetenz. Beispiele für die Visualisierung öffentlich zugänglicher Datensätze mit Python/Jupyter Notebooks.
 
 Verwendete Python Version: 3.9 oder höher
 
-Für die Beispiele werden generell NumPy, MatPlotLib und Jupyter (für Notebooks) benötigt.
+Für die Beispiele werden generell **NumPy**, **MatPlotLib** und **Jupyter** (für Notebooks) benötigt.
 
 Die Module können über Conda/Anaconda installiert werden.
 
