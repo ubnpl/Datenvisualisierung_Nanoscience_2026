@@ -1,16 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # Visualisierung molekularer Daten und Strukturen mit RDKit und py3Dmol
+# # Visualisierung molekularer Daten und Strukturen mit **RDKit** und **py3Dmol**
 
-# #### RDKit importieren und installieren
+# Die interaktiven 3D-Strukturen von Py3dMol sind nur beim Ausführen des Notebooks in Browser verfügbar. Auf GitHub werden sie als leere Felder angezeigt.
+
+# #### **RDKit** importieren und installieren
 # 
 # RDKit in Python:
 #     https://www.rdkit.org/docs/GettingStartedInPython.html
 # 
 # RDKit Cookbook:
 #     https://www.rdkit.org/docs/Cookbook.html
-#     
 
 # In[1]:
 
@@ -19,7 +20,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 
-# #### py3Dmol installieren und importieren:
+# #### **py3Dmol** installieren und importieren:
 # 
 # Viewer: py3Dmol 
 #     https://pypi.org/project/py3Dmol/
