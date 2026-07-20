@@ -2,7 +2,7 @@
 
 Molecular_visualization: einfache Visualisierung von Molekuelen
 
-Benötigte Python Module: RDKit, py3Dmol
+Benötigte Python Module: **RDKit**, **py3Dmol**
 
 Benötigte Daten: 
 
